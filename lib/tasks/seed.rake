@@ -9,6 +9,7 @@ task seed_data: :environment do
                name:      job['name'],
                job_types: job_types,
                index:     index,
+               color: job['color'],
     }
     Job.create(job_data)
   end

@@ -1,20 +1,24 @@
 jobs:
   - name: Programista
+    color: red
     types:
       - Główny programista
       - Programista gameplayu
       - Programista silnika
   - name: Artysta
+    color: green
     types:
       - Grafik 2D
       - Grafik 3D
       - Animator
   - name: Projektant/QA
+    color: blue
     types:
       - Projektant gry
       - Projektant poziomów
       - Tester
   - name: Producent
+    color: olive
     types:
       - Producent
       - Dyrektor artystyczny

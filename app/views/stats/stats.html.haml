@@ -1,6 +1,26 @@
+%h1.ui.header Zarobki gamedevu netto
 .ui.four.cards
   - @cards.each do |title, key|
     .card
       .content
         .header= title
         .description= gd_pie_chart(key)
+- @jobs.each do |job|
+  .ui.inverted.segment{class: job.color}
+    %h2.ui.header= job.name
+    .ui.small.statistics
+      .statistic
+        .value= gd_job_stat(job, :average)
+        .label Średnia
+      .statistic
+        .value= gd_job_stat(job, :median)
+        .label Mediana
+    .ui.four.cards
+      - @cards.each do |title, key|
+        .card
+          .content
+            .header
+              = job.name
+              = '-'
+              = title.downcase
+            .description= gd_pie_chart(key, job: job)
