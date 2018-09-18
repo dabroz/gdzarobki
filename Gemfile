@@ -63,7 +63,9 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'array_with_progress'
 gem 'awesome_print'
+gem 'chartkick'
 gem 'haml-rails'
+gem 'jquery-rails'
 gem 'semantic-ui-sass'
 gem 'simple_form'
 

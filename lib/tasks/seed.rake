@@ -38,24 +38,20 @@ task seed_data: :environment do
   ap Skill.all
 end
 
-task seed_random: [:environment, :seed_data] do
-
+task seed_random: %i[environment seed_data] do
   100.times do
-
     entry_data = {
       job_type: JobType.all.sample,
       skill: Skill.all.sample,
       city: City.all.sample,
       contract: Contract.all.sample,
-      age: Age.all.sample,   
+      age: Age.all.sample,
       delete_code: '123',
-      income: rand(3000..20000)   
+      income: rand(3000..20_000),
     }
 
     Entry.create(entry_data)
 
     ap Entry.all
-
   end
-
 end
