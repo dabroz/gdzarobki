@@ -63,9 +63,9 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'array_with_progress'
 gem 'awesome_print'
+gem 'haml-rails'
 gem 'semantic-ui-sass'
 gem 'simple_form'
-gem 'haml-rails'
 
 group :development do
   gem 'rubocop', require: false
