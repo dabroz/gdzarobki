@@ -24,26 +24,39 @@ module StatsHelper
 
   def gd_bar_chart(job, key, title)
     title = "#{job.name} - #{title}"
+
     data = Entry.all
     data = data.includes(:job_type).where(job_types: {job: job})
     data = data.group(key).count
     valid_ids = data.select { |_k, v| v >= TRESHOLD }.map { |k, _v| k.id }
+
     data = Entry.all
     data = data.includes(:job_type).where(job_types: {job: job})
     data = data.where("#{key}_id" => valid_ids)
-    data = data.group(key).average(:income)
-    data = data.map { |k, v| [k.name, v.round(-2)] }.to_h
+
     return "#{title}: za mało danych" if data.empty?
 
-    bar_chart data, title: title
+    data = [
+      {name: 'Średnia', data: calculate_data(data, key, :average)},
+      {name: 'Mediana', data: calculate_data(data, key, :median)},
+    ]
+
+    bar_chart data, title: title, max: max_value, suffix: ' zł'
+  end
+
+  def calculate_data(data, key, type)
+    data.group(key).send(type, :income).map { |k, v| [k.name, v.round(-2)] }.to_h
   end
 
   def gd_job_stat(job, stat)
     data = Entry.all
     data = data.includes(:job_type).where(job_types: {job: job})
-    STDERR.puts "data #{job} #{stat} -- #{data.count}"
     return 'za mało danych' if data.count < TRESHOLD
 
     data.send(stat, :income).to_i.round(-2).to_s + ' zł'
+  end
+
+  def max_value
+    Entry.all.maximum(:income).to_i.ceil(-3)
   end
 end
