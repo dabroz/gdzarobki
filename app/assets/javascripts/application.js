@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require_tree .
 //= require semantic-ui
+//= require Chart.bundle
+//= require chartjs-plugin-labels
 //= require chartkick

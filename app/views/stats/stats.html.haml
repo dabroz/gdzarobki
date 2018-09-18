@@ -1,13 +1,6 @@
-%table.ui.celled.table
-  %thead
-    %tr
-      %th Podział na wiek
-      %th Podział na miasto
-      %th Podział na staż
-      %th Podział na umowę
-  %tbody
-    %tr
-      %td= gd_pie_chart :age
-      %td= gd_pie_chart :city
-      %td= gd_pie_chart :skill
-      %td= gd_pie_chart :contract
+.ui.four.cards
+  - @cards.each do |title, key|
+    .card
+      .content
+        .header= title
+        .description= gd_pie_chart(key)

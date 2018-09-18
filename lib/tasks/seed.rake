@@ -39,7 +39,7 @@ task seed_data: :environment do
 end
 
 task seed_random: %i[environment seed_data] do
-  100.times do
+  50.times do
     entry_data = {
       job_type: JobType.all.sample,
       skill: Skill.all.sample,

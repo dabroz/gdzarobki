@@ -1,10 +1,20 @@
 module StatsHelper
-  def       gd_pie_chart(key)
+  def gd_pie_chart(key)
     library = {
-      width: 400,
-      chartArea: {left: 0, top: 0, right: 0, bottom: 0},
-      legend: {position: :right},
+      legend: {
+        position: :bottom,
+      },
+      plugins: {
+        labels: {
+          textShadow: true,
+          fontColor: '#fff',
+        },
+      },
     }
-    pie_chart Entry.group(key).count.map { |k, v| [k.name, v] }.to_h, library: library
+    data = Entry.group(key).count
+    sum = data.values.sum
+    data = data.sort_by { |k, _v| k.index }
+    data = data.map { |k, v| [k.name, v * 100 / sum] }.to_h
+    pie_chart data, library: library
   end
 end
