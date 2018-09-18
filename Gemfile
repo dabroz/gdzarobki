@@ -61,6 +61,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 ##
 
+gem 'active_median'
 gem 'array_with_progress'
 gem 'awesome_print'
 gem 'chartkick'

@@ -4,3 +4,7 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+Rake::Task['db:schema:load'].enhance do
+  ActiveMedian.create_function
+end

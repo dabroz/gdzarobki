@@ -15,6 +15,9 @@
       .statistic
         .value= gd_job_stat(job, :median)
         .label Mediana
+    - @cards.each do |title, key|
+      .ui.segment      
+        = gd_bar_chart(job, key, title)
     .ui.four.cards
       - @cards.each do |title, key|
         .card

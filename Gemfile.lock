@@ -24,6 +24,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_median (0.1.4)
+      activerecord
     activejob (5.2.1)
       activesupport (= 5.2.1)
       globalid (>= 0.3.6)
@@ -241,6 +243,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_median
   array_with_progress
   awesome_print
   bootsnap (>= 1.1.0)
