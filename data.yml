@@ -1,0 +1,39 @@
+jobs:
+  - name: Programista
+    types:
+      - Główny programista
+      - Programista gameplayu
+      - Programista silnika
+  - name: Artysta
+    types:
+      - Grafik 2D
+      - Grafik 3D
+      - Animator
+  - name: Projektant/QA
+    types:
+      - Projektant gry
+      - Projektant poziomów
+      - Tester
+  - name: Producent
+    types:
+      - Producent
+      - Dyrektor artystyczny
+cities:
+  - 1k - 250k
+  - 251k - 500k
+  - 501k+
+contracts:
+  - Umowa o dzieło
+  - Umowa o pracę
+  - Faktura
+  - Właściciel
+  - Inne
+age:
+  - <24
+  - 25-32
+  - 33-40
+  - 41+
+skill:
+  - 0-3
+  - 3-6
+  - 6+
