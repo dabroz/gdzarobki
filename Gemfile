@@ -58,3 +58,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+##
+
+gem 'semantic-ui-sass'
+gem 'simple_form'
+gem 'array_with_progress'
+gem 'awesome_print'
+
+group :development do
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
+end
