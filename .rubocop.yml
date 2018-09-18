@@ -24,16 +24,19 @@ Layout/SpaceInsideHashLiteralBraces:
 Layout/IndentHash:
   Enabled: false
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
 
 AccessModifierIndentation:
   EnforcedStyle: outdent
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   AutoCorrect: true
 
-Lint/DefEndAlignment:
+Layout/DefEndAlignment:
   AutoCorrect: true
 
 Style/RaiseArgs:
