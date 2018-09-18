@@ -65,6 +65,7 @@ gem 'array_with_progress'
 gem 'awesome_print'
 gem 'semantic-ui-sass'
 gem 'simple_form'
+gem 'haml-rails'
 
 group :development do
   gem 'rubocop', require: false
