@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_type_id: 1
+  skill_id: 1
+  age_id: 1
+  contract_id: 1
+  city_id: 1
+  income: 9.99
+  delete_code: MyString
+
+two:
+  job_type_id: 1
+  skill_id: 1
+  age_id: 1
+  contract_id: 1
+  city_id: 1
+  income: 9.99
+  delete_code: MyString

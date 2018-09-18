@@ -1,0 +1,11 @@
+.ui.form
+  = simple_form_for(@entry) do |f|
+    = f.error_notification
+
+    .form-inputs
+      = f.input :job_type_id
+
+    %br
+    
+    .form-actions
+      = f.button :submit, 'Zapisz', class: 'ui primary button'
